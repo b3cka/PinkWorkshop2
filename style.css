@@ -1,0 +1,312 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.content {
+    margin: 0 auto;
+    width: auto;
+}
+
+
+/*HEADER AND ITS CONTENT, START*/
+
+.header {
+    background: url('images/mount.jpg') 50% 0 no-repeat fixed;
+    background-color: inherit;
+    color: #fff;
+    height: 100%;
+    margin: 0;
+    background-size: cover;
+}
+
+.name {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 200%;
+    color: black;
+}
+
+
+/*HEADER AND ITS CONTENT, STOP*/
+
+
+/*BOTH MENUS, THE NORMAL ONE AND THE BURGER MENU, START*/
+
+.menu {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.menu>ul {
+    list-style: none;
+    display: block;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    color: white;
+    background-color: inherit;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.2rem;
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+#dropMenu {
+    display: none;
+}
+
+
+/*BOTH MENUS, THE NORMAL ONE AND THE BURGER MENU, STOP*/
+
+
+/*ALL SLIDES AND OVERALL CONTENT AND STYLE, START*/
+
+.slide1, .slide2, .slide3 {
+    width: 100%;
+}
+
+.left {
+    height: 100%;
+    width: 50vw;
+    position: relative;
+    display: inline-flex;
+}
+
+.right {
+    height: 100%;
+    width: 50vw;
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 0;
+    overflow: hidden;
+}
+
+
+/*ALL SLIDES AND OVERALL CONTENT AND STYLE, STOP*/
+
+
+/*SLIDE 1 AND ITS CONTENT, START*/
+
+.slide1 .content {
+    background-color: #fff;
+    color: #333333;
+    height: 100vh;
+    display: flex;
+}
+
+.slide1 .left {
+    background-color: grey;
+}
+
+.right .projectImage {
+    width: 50vw;
+    height: 34vh;
+    overflow: hidden;
+    display: inline-flex;
+    /*detta nedan gäller för varje project section, ligger nu för alla tre men kommer
+  säkert behövas flyttas till de enskilda då de kommer ha olika bilder*/
+    background-image: url('http://placehold.it/540x322');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.projectLink {
+    width: 100%;
+    height: 100%;
+}
+
+.right section:hover {
+    opacity: 1;
+}
+
+
+/*SLIDE 1 AND ITS CONTENT, STOP*/
+
+
+/*SLIDE 2 AND ITS CONTENT, START*/
+
+.slide2 .content {
+    background: url('images/brush1.jpg') 50% 0 no-repeat fixed, linear-gradient(purple 0%, red 90%), linear-gradient(to right, purple 0%, yellow 90%);
+    background-blend-mode: screen, difference, lighten;
+    background-position: center;
+    background-color: blue;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.module{
+  margin-top: 2rem;
+  opacity: 0;
+  position: relative;
+  align-self: center;
+}
+
+.module h1{
+  margin: 0;
+  color: white;
+}
+
+.info{
+  width: 50vw;
+  background-color: white;
+}
+
+.info p{
+  padding: 1rem;
+}
+
+.come-in {
+  opacity: 1;
+  transform: translateY(200px);
+  animation: come-in 1.5s ease forwards;
+  transition: all 700ms ease-in;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 1.5s;
+}
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+
+/*SLIDE 2 AND ITS CONTENT, STOP*/
+
+
+/*SLIDE 3 AND ITS CONTENT, START*/
+
+.slide3 {
+    background-color: #fff;
+    color: #333333;
+    height: 100vh;
+}
+
+
+/*SLIDE 3 AND ITS CONTENT, STOP*/
+
+
+/*FIRST PROJECT AND CONTENT, START*/
+
+.project1 {
+    display: none;
+    overflow: scroll;
+    background-color: white;
+    color: inherit;
+    position: fixed;
+    width: 90%;
+    height: 90%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.closeBtn {
+    position: absolute;
+    cursor: pointer;
+    right: 0.5rem;
+    top: 0.5rem;
+}
+
+#project1.show {
+    display: inline-block;
+}
+
+.project1 p, h1 {
+    margin: 2rem 4rem 0rem 4rem;
+}
+
+
+/*FIRST PROJECT AND CONTENT, STOP*/
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 800px) {
+    /*DROP DOWN MENU START*/
+    #menuOne {
+        display: none;
+    }
+    #dropMenu {
+        display: block;
+    }
+    .dropbtn {
+        border: none;
+        cursor: pointer;
+    }
+    /*BURGER MENU ICON*/
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        color: inherit;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    /*BURGER MENU ICON STOP*/
+    .dropdown {
+        position: absolute;
+        display: inline-block;
+        top: 2rem;
+        right: 2rem;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: inherit;
+        min-width: 700px;
+        overflow: auto;
+        z-index: 1;
+        right: 0rem;
+    }
+    .dropdown-content ul {
+        padding: 0;
+    }
+    .dropdown-content a {
+        color: white;
+        background-color: inherit;
+        text-decoration: none;
+        display: block;
+        padding: 0.5rem;
+        text-align: center;
+    }
+    .show2 {
+        display: block;
+    }
+    /*DROP DOWN MENU STOP*/
+}
